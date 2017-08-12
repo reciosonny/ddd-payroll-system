@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollAppSample.DDD.MVC", "PayrollAppSample.DDD.MVC\PayrollAppSample.DDD.MVC.csproj", "{A768B424-C5D6-4CD7-BEF5-C048B3840B09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollAppSample.DDD.Tests", "PayrollAppSample.DDD.Tests\PayrollAppSample.DDD.Tests.csproj", "{DEC5BDD1-E7C0-4CD3-BB40-6A72DF280586}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A768B424-C5D6-4CD7-BEF5-C048B3840B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A768B424-C5D6-4CD7-BEF5-C048B3840B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A768B424-C5D6-4CD7-BEF5-C048B3840B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A768B424-C5D6-4CD7-BEF5-C048B3840B09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC5BDD1-E7C0-4CD3-BB40-6A72DF280586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC5BDD1-E7C0-4CD3-BB40-6A72DF280586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC5BDD1-E7C0-4CD3-BB40-6A72DF280586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC5BDD1-E7C0-4CD3-BB40-6A72DF280586}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
