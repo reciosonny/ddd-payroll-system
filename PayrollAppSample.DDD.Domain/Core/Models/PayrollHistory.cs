@@ -1,8 +1,9 @@
-﻿using System;
+﻿using PayrollAppSample.DDD.Domain.Core.Interfaces;
+using System;
 
 namespace PayrollAppSample.DDD.Domain.Core.Models {
-    public class PayrollHistory {
-        public int Id { get; set; }
+    public class PayrollHistory : IEntity {
+        //public int Id { get; set; }
         public int EmployeeId { get; set; }
         public decimal NetIncome { get; set; }
         public decimal GrossIncome { get; set; }

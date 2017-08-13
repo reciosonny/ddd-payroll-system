@@ -1,13 +1,14 @@
-﻿using System;
+﻿using PayrollAppSample.DDD.Domain.Core.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PayrollAppSample.DDD.Domain.Core.Models {
-    public class Timekeeping {
+    public class Timekeeping : IEntity {
 
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public int EmployeeId { get; set; }
         public string Entry { get; set; }
         public string Description { get; set; }

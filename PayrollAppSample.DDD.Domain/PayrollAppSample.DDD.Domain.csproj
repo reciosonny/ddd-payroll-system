@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -49,12 +52,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Interfaces\IEntity.cs" />
     <Compile Include="Core\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Core\Models\Department.cs" />
     <Compile Include="Core\Models\Employee.cs" />
     <Compile Include="Core\Models\PayrollHistory.cs" />
     <Compile Include="Core\Models\Position.cs" />
+    <Compile Include="Core\Models\TaxTable.cs" />
     <Compile Include="Core\Models\Timekeeping.cs" />
+    <Compile Include="Mapping\MappingProfile.cs" />
     <Compile Include="Migrations\201708130624322_InitialGeneration.cs" />
     <Compile Include="Migrations\201708130624322_InitialGeneration.Designer.cs">
       <DependentUpon>201708130624322_InitialGeneration.cs</DependentUpon>
@@ -71,6 +77,14 @@
     <Compile Include="Migrations\201708130750045_TimekeepingEmployee.Designer.cs">
       <DependentUpon>201708130750045_TimekeepingEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708131346170_TaxTable.cs" />
+    <Compile Include="Migrations\201708131346170_TaxTable.Designer.cs">
+      <DependentUpon>201708131346170_TaxTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708131436058_NullableForeignKeys.cs" />
+    <Compile Include="Migrations\201708131436058_NullableForeignKeys.Designer.cs">
+      <DependentUpon>201708131436058_NullableForeignKeys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\PayrollContext.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
@@ -78,6 +92,10 @@
     <Compile Include="Repository\Implementation\GenericRepository.cs" />
     <Compile Include="Repository\Implementation\IGenericRepository.cs" />
     <Compile Include="Services\Implementation\EmployeeService.cs" />
+    <Compile Include="Services\Implementation\HumanResourceService.cs" />
+    <Compile Include="Services\Implementation\IEmployeeService.cs" />
+    <Compile Include="Services\Implementation\PayrollService.cs" />
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -103,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708130750045_TimekeepingEmployee.resx">
       <DependentUpon>201708130750045_TimekeepingEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708131346170_TaxTable.resx">
+      <DependentUpon>201708131346170_TaxTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708131436058_NullableForeignKeys.resx">
+      <DependentUpon>201708131436058_NullableForeignKeys.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
