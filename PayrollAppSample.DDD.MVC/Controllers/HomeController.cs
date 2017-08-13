@@ -10,8 +10,9 @@ namespace PayrollAppSample.DDD.MVC.Controllers {
     public class HomeController : Controller {
 
         private readonly IEmployeeService _empService;
-        public HomeController() {
-            _empService = DependencyInjectionBootstrapper.InjectEmployeeServiceDependencies();
+        public HomeController(IEmployeeService empService) {
+            _empService = empService;
+            //_empService = DependencyInjectionBootstrapper.InjectEmployeeServiceDependencies();
         }
 
         public ActionResult Index() {
