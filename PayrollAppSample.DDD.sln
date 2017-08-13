@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollAppSample.DDD.MVC", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollAppSample.DDD.Tests", "PayrollAppSample.DDD.Tests\PayrollAppSample.DDD.Tests.csproj", "{DEC5BDD1-E7C0-4CD3-BB40-6A72DF280586}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollAppSample.DDD.Domain", "PayrollAppSample.DDD.Domain\PayrollAppSample.DDD.Domain.csproj", "{315FFCB5-BDD4-4883-B8CF-2DC708F75579}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DEC5BDD1-E7C0-4CD3-BB40-6A72DF280586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEC5BDD1-E7C0-4CD3-BB40-6A72DF280586}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC5BDD1-E7C0-4CD3-BB40-6A72DF280586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{315FFCB5-BDD4-4883-B8CF-2DC708F75579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315FFCB5-BDD4-4883-B8CF-2DC708F75579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315FFCB5-BDD4-4883-B8CF-2DC708F75579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315FFCB5-BDD4-4883-B8CF-2DC708F75579}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
