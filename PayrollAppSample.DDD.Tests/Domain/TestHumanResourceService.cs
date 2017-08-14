@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace PayrollAppSample.DDD.Tests.Domain {
     [TestFixture]
-    public class TestEmployeeService {
+    public class TestHumanResourceService {
 
         [Test]
         public void ApplySalaryIncreasePerPositionPercentage_Should_IncreaseEmployeeSalary() {
@@ -30,7 +30,7 @@ namespace PayrollAppSample.DDD.Tests.Domain {
                 }
             });
 
-            var service = new EmployeeService(repositoryStub, uowStub);
+            var service = new HumanResourceService(repositoryStub, uowStub);
             decimal result = service.ApplySalaryIncreasePerPositionPercentage(Arg.Any<int>());
 
             Assert.AreEqual(18750M, result);
@@ -54,7 +54,7 @@ namespace PayrollAppSample.DDD.Tests.Domain {
             deptStub.FindItem(Arg.Any<int>()).Returns(new Department() {
                 Employees = empLists
             });
-            var service = new EmployeeService(repositoryStub, deptStub, uowStub);
+            var service = new HumanResourceService(repositoryStub, deptStub, uowStub);
             #endregion
 
             List<Employee> empList = service.ApplySalaryIncreaseToSpecificDepartment(Arg.Any<int>(), 25);
@@ -76,7 +76,7 @@ namespace PayrollAppSample.DDD.Tests.Domain {
                 }
             });
 
-            var service = new EmployeeService(repositoryStub, uowStub);
+            var service = new HumanResourceService(repositoryStub, uowStub);
 
             Employee emp = service.ApplySalaryIncreaseCustom(Arg.Any<int>(), 20500M);
             decimal result = emp.CurrentSalary;
@@ -96,7 +96,7 @@ namespace PayrollAppSample.DDD.Tests.Domain {
                 }
             });
 
-            var service = new EmployeeService(repositoryStub, uowStub);
+            var service = new HumanResourceService(repositoryStub, uowStub);
 
             Employee emp = service.InitializeEmployeeSalaryUsingPosition(Arg.Any<int>());
             decimal result = emp.CurrentSalary;
@@ -113,7 +113,7 @@ namespace PayrollAppSample.DDD.Tests.Domain {
             var mapperStub = Substitute.For<IMapper>();
             var empLists = new List<Employee>();
 
-            var service = new EmployeeService(repositoryStub, deptStub, uowStub);
+            var service = new HumanResourceService(repositoryStub, deptStub, uowStub);
             //mapperStub.Map<EmployeeViewModel, Employee>(Arg.Any<EmployeeViewModel>()).Returns(new Employee() {
             //    Fname = "Sonny",
             //    Lname = "Recio"
@@ -142,7 +142,7 @@ namespace PayrollAppSample.DDD.Tests.Domain {
             });
 
 
-            var service = new EmployeeService(repositoryStub, taxStub, uowStub);
+            var service = new HumanResourceService(repositoryStub, taxStub, uowStub);
 
 
             decimal result = service.GetNetPayWithTaxDeductionOnly(Arg.Any<int>());

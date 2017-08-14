@@ -10,15 +10,15 @@ using System.Web;
 namespace PayrollAppSample.DDD.MVC.Bootstrapper {
     public static class DependencyInjectionBootstrapper {
         
-        public static IEmployeeService InjectEmployeeServiceDependencies() {
-            IEmployeeService _empService;
+        public static IHumanResourceService InjectEmployeeServiceDependencies() {
+            IHumanResourceService _empService;
             var dbContext = new PayrollContext();
             var empRepository = new GenericRepository<Employee>(dbContext);
             var taxRepository = new GenericRepository<TaxTable>(dbContext);
             var deptRepository = new GenericRepository<Department>(dbContext);
             var uow = new UnitOfWork(dbContext);
 
-            _empService = new EmployeeService(empRepository, deptRepository, taxRepository, uow);
+            _empService = new HumanResourceService(empRepository, deptRepository, taxRepository, uow);
 
             return _empService;
         }

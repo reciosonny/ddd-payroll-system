@@ -9,8 +9,8 @@ using System.Web.Mvc;
 namespace PayrollAppSample.DDD.MVC.Controllers {
     public class HomeController : Controller {
 
-        private readonly IEmployeeService _empService;
-        public HomeController(IEmployeeService empService) {
+        private readonly IHumanResourceService _empService;
+        public HomeController(IHumanResourceService empService) {
             _empService = empService;
         }
 

@@ -35,7 +35,6 @@ namespace PayrollAppSample.DDD.MVC.DependencyResolution {
                     scan.WithDefaultConventions();
                 });
 
-
             //For<IExample>().Use<Example>();
             For<System.Data.Entity.DbContext>().Use<PayrollContext>();
             For<IGenericRepository<Employee>>().Use<GenericRepository<Employee>>();
@@ -43,7 +42,7 @@ namespace PayrollAppSample.DDD.MVC.DependencyResolution {
             For<IGenericRepository<Department>>().Use<GenericRepository<Department>>();
             For<IUnitOfWork>().Use<UnitOfWork>();
 
-            For<IEmployeeService>().Use<EmployeeService>();
+            For<IHumanResourceService>().Use<HumanResourceService>();
 
         }
 

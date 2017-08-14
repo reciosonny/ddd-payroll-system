@@ -3,7 +3,7 @@ using PayrollAppSample.DDD.Domain.Core.Models;
 using PayrollAppSample.DDD.Domain.ViewModels;
 
 namespace PayrollAppSample.DDD.Domain.Services.Implementation {
-    public interface IEmployeeService {
+    public interface IHumanResourceService {
         Employee AddEmployee(EmployeeViewModel model);
         Employee ApplySalaryIncreaseCustom(int employeeId, decimal customIncreaseSalaryAmt);
         decimal ApplySalaryIncreasePerPositionPercentage(int employeeId);
@@ -11,9 +11,9 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
         void AssignDepartment(int employeeId, int deptId);
         void DeleteEmployee(int empId);
         void DeleteMultipleEmployees(int[] empIds);
-        List<Timekeeping> GetListOfEmployeeTimekeeping();
         decimal GetNetPayWithTaxDeductionOnly(int empId);
         decimal GetYearlyIncome();
         Employee InitializeEmployeeSalaryUsingPosition(int employeeId);
+        Employee RemoveEmployee(int empId);
     }
 }

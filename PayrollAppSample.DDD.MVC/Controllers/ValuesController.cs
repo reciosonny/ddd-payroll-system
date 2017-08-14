@@ -8,8 +8,8 @@ using System.Web.Http;
 
 namespace PayrollAppSample.DDD.MVC.Controllers {
     public class ValuesController : ApiController {
-        private readonly IEmployeeService _empService;
-        public ValuesController(IEmployeeService empService) {
+        private readonly IHumanResourceService _empService;
+        public ValuesController(IHumanResourceService empService) {
             _empService = empService;
         }
 
