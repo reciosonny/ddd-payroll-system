@@ -11,13 +11,13 @@ namespace PayrollAppSample.DDD.Domain.Migrations
                 "dbo.EmployeeIncludedDeductions",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false),
                         EmployeeDeductionsId = c.Int(nullable: false),
                         EmployeeId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Employees", t => t.EmployeeId, cascadeDelete: true)
-                .Index(t => t.EmployeeId);
+                .ForeignKey("dbo.Employees", t => t.Id)
+                .Index(t => t.Id);
             
             CreateTable(
                 "dbo.EmployeeDeductions",
@@ -47,8 +47,8 @@ namespace PayrollAppSample.DDD.Domain.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Employees", "DateHired", c => c.DateTime(nullable: false));
-            AddColumn("dbo.Employees", "EmployeeIncludedDeductionsId", c => c.Int(nullable: false));
+            AddColumn("dbo.Employees", "DateHired", c => c.DateTime());
+            AddColumn("dbo.Employees", "EmployeeIncludedDeductionsId", c => c.Int());
             AddColumn("dbo.Employees", "PayrollEntry_Id", c => c.Int());
             CreateIndex("dbo.Employees", "PayrollEntry_Id");
             AddForeignKey("dbo.Employees", "PayrollEntry_Id", "dbo.PayrollEntries", "Id");
@@ -58,10 +58,10 @@ namespace PayrollAppSample.DDD.Domain.Migrations
         {
             DropForeignKey("dbo.Employees", "PayrollEntry_Id", "dbo.PayrollEntries");
             DropForeignKey("dbo.EmployeeDeductions", "EmployeeIncludedDeductions_Id", "dbo.EmployeeIncludedDeductions");
-            DropForeignKey("dbo.EmployeeIncludedDeductions", "EmployeeId", "dbo.Employees");
+            DropForeignKey("dbo.EmployeeIncludedDeductions", "Id", "dbo.Employees");
             DropIndex("dbo.EmployeeDeductions", new[] { "EmployeeIncludedDeductions_Id" });
             DropIndex("dbo.Employees", new[] { "PayrollEntry_Id" });
-            DropIndex("dbo.EmployeeIncludedDeductions", new[] { "EmployeeId" });
+            DropIndex("dbo.EmployeeIncludedDeductions", new[] { "Id" });
             DropColumn("dbo.Employees", "PayrollEntry_Id");
             DropColumn("dbo.Employees", "EmployeeIncludedDeductionsId");
             DropColumn("dbo.Employees", "DateHired");

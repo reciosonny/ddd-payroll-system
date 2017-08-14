@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace PayrollAppSample.DDD.IntegrationTests.Domain {
     [TestFixture]
+    [Ignore("Prioritize Unit Tests first")]
     public class TestHumanResourceService_Integration {
 
         public TestHumanResourceService_Integration() {

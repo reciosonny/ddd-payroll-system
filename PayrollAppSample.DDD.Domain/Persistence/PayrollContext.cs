@@ -18,6 +18,5 @@ namespace PayrollAppSample.DDD.Domain.Persistence {
         public DbSet<EmployeeIncludedDeductions> EmployeeIncludedDeductions { get; set; }
         public DbSet<PayrollEntry> PayrollEntries { get; set; }
 
-
     }
 }

@@ -88,9 +88,9 @@
     <Compile Include="Migrations\201708131436058_NullableForeignKeys.Designer.cs">
       <DependentUpon>201708131436058_NullableForeignKeys.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708141501223_DeductionsAndPayroll.cs" />
-    <Compile Include="Migrations\201708141501223_DeductionsAndPayroll.Designer.cs">
-      <DependentUpon>201708141501223_DeductionsAndPayroll.cs</DependentUpon>
+    <Compile Include="Migrations\201708141551572_DeductionsAndPayroll.cs" />
+    <Compile Include="Migrations\201708141551572_DeductionsAndPayroll.Designer.cs">
+      <DependentUpon>201708141551572_DeductionsAndPayroll.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\PayrollContext.cs" />
@@ -135,8 +135,8 @@
     <EmbeddedResource Include="Migrations\201708131436058_NullableForeignKeys.resx">
       <DependentUpon>201708131436058_NullableForeignKeys.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708141501223_DeductionsAndPayroll.resx">
-      <DependentUpon>201708141501223_DeductionsAndPayroll.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708141551572_DeductionsAndPayroll.resx">
+      <DependentUpon>201708141551572_DeductionsAndPayroll.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

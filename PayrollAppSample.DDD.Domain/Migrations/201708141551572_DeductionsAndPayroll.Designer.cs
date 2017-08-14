@@ -13,7 +13,7 @@ namespace PayrollAppSample.DDD.Domain.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201708141501223_DeductionsAndPayroll"; }
+            get { return "201708141551572_DeductionsAndPayroll"; }
         }
         
         string IMigrationMetadata.Source

@@ -19,8 +19,8 @@ namespace PayrollAppSample.DDD.Domain.Core.Models {
         public bool PayrollIncluded { get; set; }
         public int? PayrollHistoryId { get; set; }
         public int? TimekeepingId { get; set; }
-        public DateTime DateHired { get; set; }
-        public int EmployeeIncludedDeductionsId { get; set; }
+        public DateTime? DateHired { get; set; }
+        public int? EmployeeIncludedDeductionsId { get; set; }
 
         #region Navigation Properties
         public virtual Position Position { get; set; }
@@ -30,7 +30,7 @@ namespace PayrollAppSample.DDD.Domain.Core.Models {
         public virtual Department Department { get; set; }
         public virtual ICollection<PayrollHistory> PayrollHistories { get; set; }
         public virtual ICollection<Timekeeping> Timekeepings { get; set; }
-        public ICollection<EmployeeIncludedDeductions> EmployeeIncludedDeductions { get; set; }
+        public EmployeeIncludedDeductions EmployeeIncludedDeductions { get; set; }
 
         #endregion
 

@@ -39,6 +39,10 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
             _uow = uow; //new UnitOfWork(context);
         }
 
+        public EmployeeDeductions AddDeductionType(EmployeeDeductions employeeDeductions) {
+            throw new NotImplementedException();
+        }
+
         public HumanResourceService(IGenericRepository<Employee> employeeRepository, IGenericRepository<Department> deptRepository, IUnitOfWork uow) {
             //var context = new PayrollContext();
             _employeeRepository = employeeRepository;
