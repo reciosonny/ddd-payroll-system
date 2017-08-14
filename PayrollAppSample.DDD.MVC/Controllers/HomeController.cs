@@ -12,7 +12,6 @@ namespace PayrollAppSample.DDD.MVC.Controllers {
         private readonly IEmployeeService _empService;
         public HomeController(IEmployeeService empService) {
             _empService = empService;
-            //_empService = DependencyInjectionBootstrapper.InjectEmployeeServiceDependencies();
         }
 
         public ActionResult Index() {

@@ -82,14 +82,16 @@ namespace PayrollAppSample.DDD.MVC.DependencyResolution {
         }
 
         public void Dispose() {
-            DisposeNestedContainer();
+            if (CurrentNestedContainer != null) {
+                CurrentNestedContainer.Dispose();
+            }
+
             Container.Dispose();
         }
 
         public void DisposeNestedContainer() {
             if (CurrentNestedContainer != null) {
                 CurrentNestedContainer.Dispose();
-				CurrentNestedContainer = null;
             }
         }
 

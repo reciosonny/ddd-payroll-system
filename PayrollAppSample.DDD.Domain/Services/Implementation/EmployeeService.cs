@@ -20,7 +20,6 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
         private readonly IMapper _mapper;
         private readonly IGenericRepository<TaxTable> _taxTableRepository;
 
-        #region Constructors
         public EmployeeService(IGenericRepository<Employee> employeeRepository, IGenericRepository<Department> deptRepository, IGenericRepository<TaxTable> taxTableRepository, IUnitOfWork uow) {
             _deptRepository = deptRepository;
             _employeeRepository = employeeRepository; //new GenericRepository<Employee>(context);
@@ -28,24 +27,32 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
             _uow = uow; //new UnitOfWork(context);
         }
 
-        //public EmployeeService(IGenericRepository<Employee> employeeRepository, IUnitOfWork uow) {
-        //    //var context = new PayrollContext();
-        //    _employeeRepository = employeeRepository; //new GenericRepository<Employee>(context);
-        //    //_mapper = mapper;
-        //    _uow = uow; //new UnitOfWork(context);
-        //}
+        #region For Unit-Testing Constructors
+        public EmployeeService(IGenericRepository<Employee> employeeRepository, IUnitOfWork uow) {
+            //var context = new PayrollContext();
+            _employeeRepository = employeeRepository; //new GenericRepository<Employee>(context);
+            //_mapper = mapper;
+            _uow = uow; //new UnitOfWork(context);
+        }
 
-        //public EmployeeService(IGenericRepository<Employee> employeeRepository, IGenericRepository<TaxTable> taxTableRepository, IUnitOfWork uow) {
-        //    //var context = new PayrollContext();
-        //    _employeeRepository = employeeRepository;
-        //    _taxTableRepository = taxTableRepository;
-        //}
+        public EmployeeService(IGenericRepository<Employee> employeeRepository, IGenericRepository<Department> deptRepository, IUnitOfWork uow) {
+            //var context = new PayrollContext();
+            _employeeRepository = employeeRepository;
+            _deptRepository = deptRepository;
+            _uow = uow;
+        }
+        public EmployeeService(IGenericRepository<Employee> employeeRepository, IGenericRepository<TaxTable> taxTableRepository, IUnitOfWork uow) {
+            //var context = new PayrollContext();
+            _employeeRepository = employeeRepository;
+            _taxTableRepository = taxTableRepository;
+        }
 
         #endregion
 
         public Employee AddEmployee(EmployeeViewModel model) {
             var data = new Employee() {
-                Fname = model.Fname
+                Fname = model.Fname,
+                Lname = model.Lname
             };
             _employeeRepository.Add(data);
             _uow.Complete();

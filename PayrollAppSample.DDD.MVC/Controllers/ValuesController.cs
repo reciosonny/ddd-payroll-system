@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PayrollAppSample.DDD.Domain.Services.Implementation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,6 +8,11 @@ using System.Web.Http;
 
 namespace PayrollAppSample.DDD.MVC.Controllers {
     public class ValuesController : ApiController {
+        private readonly IEmployeeService _empService;
+        public ValuesController(IEmployeeService empService) {
+            _empService = empService;
+        }
+
         // GET api/values
         public IEnumerable<string> Get() {
             return new string[] { "value1", "value2" };
