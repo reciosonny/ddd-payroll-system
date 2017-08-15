@@ -15,5 +15,6 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
         decimal GetYearlyIncome();
         Employee InitializeEmployeeSalaryUsingPosition(int employeeId);
         Employee RemoveEmployee(int empId);
+        IEnumerable<Employee> GetListOfEmployees();
     }
 }

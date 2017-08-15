@@ -1,0 +1,68 @@
+﻿@model IEnumerable<PayrollAppSample.DDD.Domain.Core.Models.Employee>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Human Resource</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmploymentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateHired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemainingLeaveCredits)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmploymentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateHired)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemainingLeaveCredits)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

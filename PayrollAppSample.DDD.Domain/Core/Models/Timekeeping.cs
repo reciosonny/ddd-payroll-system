@@ -22,5 +22,10 @@ namespace PayrollAppSample.DDD.Domain.Core.Models {
 
         public Employee Employee { get; set; }
 
+        /// <summary>
+        /// Year the leave credit was awarded
+        /// </summary>
+        public int LeaveCreditYear { get; set; }
+
     }
 }

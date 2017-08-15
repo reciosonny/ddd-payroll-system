@@ -46,5 +46,13 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
                 .EmployeeDeductions
                 .Sum(x => x.FixedAmtDeduction);
         }
+
+        public decimal GetEmployeePayrollHistoryTotalNetpay(int empId) {
+            var model = _employeeRepository.FindItem(empId);
+
+            return model
+                .PayrollHistories
+                .Sum(x => x.NetIncome);
+        }
     }
 }

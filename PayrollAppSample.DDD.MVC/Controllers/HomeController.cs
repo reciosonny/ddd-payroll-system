@@ -16,12 +16,12 @@ namespace PayrollAppSample.DDD.MVC.Controllers {
 
         public ActionResult Index() {
             ViewBag.Title = "Home Page";
-            _empService.AddEmployee(new Domain.ViewModels.EmployeeViewModel() {
-                Fname = "Sonny"
-            });
-            _empService.AddEmployee(new Domain.ViewModels.EmployeeViewModel() {
-                Fname = "Sonny"
-            });
+            //_empService.AddEmployee(new Domain.ViewModels.EmployeeViewModel() {
+            //    Fname = "Sonny"
+            //});
+            //_empService.AddEmployee(new Domain.ViewModels.EmployeeViewModel() {
+            //    Fname = "Sonny"
+            //});
 
             return View();
         }

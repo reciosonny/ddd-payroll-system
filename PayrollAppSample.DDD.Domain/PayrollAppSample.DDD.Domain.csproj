@@ -63,6 +63,7 @@
     <Compile Include="Core\Models\Position.cs" />
     <Compile Include="Core\Models\TaxTable.cs" />
     <Compile Include="Core\Models\Timekeeping.cs" />
+    <Compile Include="Fake\FakeEmployeeRepository.cs" />
     <Compile Include="Mapping\MappingProfile.cs" />
     <Compile Include="Migrations\201708130624322_InitialGeneration.cs" />
     <Compile Include="Migrations\201708130624322_InitialGeneration.Designer.cs">
@@ -91,6 +92,14 @@
     <Compile Include="Migrations\201708141551572_DeductionsAndPayroll.cs" />
     <Compile Include="Migrations\201708141551572_DeductionsAndPayroll.Designer.cs">
       <DependentUpon>201708141551572_DeductionsAndPayroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708150242360_RemainingLeaveCredits.cs" />
+    <Compile Include="Migrations\201708150242360_RemainingLeaveCredits.Designer.cs">
+      <DependentUpon>201708150242360_RemainingLeaveCredits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708151306375_LeaveCredits.cs" />
+    <Compile Include="Migrations\201708151306375_LeaveCredits.Designer.cs">
+      <DependentUpon>201708151306375_LeaveCredits.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\PayrollContext.cs" />
@@ -137,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708141551572_DeductionsAndPayroll.resx">
       <DependentUpon>201708141551572_DeductionsAndPayroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708150242360_RemainingLeaveCredits.resx">
+      <DependentUpon>201708150242360_RemainingLeaveCredits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708151306375_LeaveCredits.resx">
+      <DependentUpon>201708151306375_LeaveCredits.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

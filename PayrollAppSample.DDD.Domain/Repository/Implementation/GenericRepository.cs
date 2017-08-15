@@ -49,7 +49,7 @@ namespace PayrollAppSample.DDD.Domain.Repository.Implementation {
         }
 
         public T QueryItem(Expression<Func<T, bool>> query) {
-            return _context.Set<T>().Where(query).First();
+            return _context.Set<T>().Where(query).FirstOrDefault();
         }
 
         public IEnumerable<T> GetAllItems() {

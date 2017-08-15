@@ -68,6 +68,10 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
             return data;
         }
 
+        public IEnumerable<Employee> GetListOfEmployees() {
+            return _employeeRepository.GetAllItems();
+        }
+
         public Employee RemoveEmployee(int empId) {
             var model = _employeeRepository.FindItem(empId);
 

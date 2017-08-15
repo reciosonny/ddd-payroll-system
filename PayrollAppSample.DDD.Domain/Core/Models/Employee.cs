@@ -21,6 +21,7 @@ namespace PayrollAppSample.DDD.Domain.Core.Models {
         public int? TimekeepingId { get; set; }
         public DateTime? DateHired { get; set; }
         public int? EmployeeIncludedDeductionsId { get; set; }
+        public decimal? RemainingLeaveCredits { get; set; }
 
         #region Navigation Properties
         public virtual Position Position { get; set; }

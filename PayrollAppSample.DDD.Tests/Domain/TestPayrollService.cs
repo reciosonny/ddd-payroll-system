@@ -43,6 +43,29 @@ namespace PayrollAppSample.DDD.Tests.Domain {
         }
 
         [Test]
+        public void GetEmployeePayrollHistoryTotalNetpay_Should_GetTotal() {
+
+            var service = new PayrollService(empStub, uowStub);
+            var list = new List<PayrollHistory>();
+            for (int i = 0; i < 4; i++) {
+                list.Add(new PayrollHistory() {
+                    GrossIncome = 25000M,
+                    NetIncome = 15000M
+                });
+            }
+
+            empStub.FindItem(Arg.Any<int>()).Returns(new Employee() {
+                PayrollHistories = list
+            });
+
+            decimal result = service.GetEmployeePayrollHistoryTotalNetpay(Arg.Any<int>());
+
+            Assert.AreEqual(60000M, result);
+
+        }
+
+
+        [Test]
         public void GetAllIncludedDeductions_Should_GetAllEmployeesDeductions() {
 
             var service = new PayrollService(empStub, uowStub);
