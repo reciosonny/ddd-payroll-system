@@ -39,10 +39,6 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
             _uow = uow; //new UnitOfWork(context);
         }
 
-        public EmployeeDeductions AddDeductionType(EmployeeDeductions employeeDeductions) {
-            throw new NotImplementedException();
-        }
-
         public HumanResourceService(IGenericRepository<Employee> employeeRepository, IGenericRepository<Department> deptRepository, IUnitOfWork uow) {
             //var context = new PayrollContext();
             _employeeRepository = employeeRepository;
@@ -56,6 +52,11 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
         }
 
         #endregion
+
+
+        public EmployeeDeductions AddDeductionType(EmployeeDeductions employeeDeductions) {
+            throw new NotImplementedException();
+        }
 
         public Employee AddEmployee(EmployeeViewModel model) {
             var data = new Employee() {

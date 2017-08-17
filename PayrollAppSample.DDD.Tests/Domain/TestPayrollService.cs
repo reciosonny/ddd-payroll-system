@@ -28,7 +28,6 @@ namespace PayrollAppSample.DDD.Tests.Domain {
 
         }
 
-
         [Test]
         public void AddDeductionType_Should_AddADeduction() {
             
@@ -84,11 +83,13 @@ namespace PayrollAppSample.DDD.Tests.Domain {
                 Name = "Philhealth"
             });
 
-            empStub.FindItem(Arg.Any<int>()).Returns(new Employee() {
-                EmployeeIncludedDeductions = new EmployeeIncludedDeductions() {
-                    EmployeeDeductions = listDeductions
-                }
-            });
+            empStub
+                .FindItem(Arg.Any<int>())
+                .Returns(new Employee() {
+                    EmployeeIncludedDeductions = new EmployeeIncludedDeductions() {
+                        EmployeeDeductions = listDeductions
+                    }
+                });
 
             decimal result = service.GetAllIncludedDeductions(Arg.Any<int>());
 

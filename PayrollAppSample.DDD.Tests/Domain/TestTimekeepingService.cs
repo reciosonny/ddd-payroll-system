@@ -68,7 +68,7 @@ namespace PayrollAppSample.DDD.Tests.Domain {
             });
             timekeepingStub
                 .QueryItem(Arg.Any<Expression<Func<Timekeeping, bool>>>())
-                .Returns(new Timekeeping()); //we give query item an instantiation to know that timekeeping is already awarded for 2 years.
+                .Returns(new Timekeeping()); //we give QueryItem an instantiation to know that timekeeping is already awarded for 2 years.
 
             Employee result = timekeepingService.AwardLeaveCreditsToEmployee(Arg.Any<int>());
             //Employee result = service.AwardLeaveCreditsToEmployee(Arg.Any<int>());
