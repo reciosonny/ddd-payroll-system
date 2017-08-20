@@ -21,6 +21,11 @@ namespace PayrollAppSample.DDD.MVC.Controllers
             return View(modelList);
         }
 
+        public ActionResult EmployeeYearlyIncome(int empId) {
+            ViewBag.YearlyIncome = _hrService.GetYearlyIncome(empId);
+            return View();
+        }
+
         // GET: HumanResource/Details/5
         public ActionResult Details(int id)
         {

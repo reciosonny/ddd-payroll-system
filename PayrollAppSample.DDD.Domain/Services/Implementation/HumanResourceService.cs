@@ -69,6 +69,13 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
             return data;
         }
 
+        public Employee AddEmployee(Employee model) {
+            _employeeRepository.Add(model);
+            _uow.Complete();
+
+            return model;
+        }
+
         public IEnumerable<Employee> GetListOfEmployees() {
             return _employeeRepository.GetAllItems();
         }
@@ -101,8 +108,10 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
             _uow.Complete();
         }
 
-        public decimal GetYearlyIncome() {
-            return _employeeRepository.GetFirstItem().GetEmployeeYearlyNetIncome();
+        public decimal GetYearlyIncome(int empId) {
+            return _employeeRepository
+                .FindItem(empId)
+                .GetEmployeeYearlyNetIncome();
         }
         
         /// <summary>

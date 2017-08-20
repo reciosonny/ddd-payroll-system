@@ -1,11 +1,25 @@
 ﻿using PayrollAppSample.DDD.Domain.Core.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PayrollAppSample.DDD.Domain.Core.Models {
+    class EmployeeInfoDTO {
+        public string Fname { get; set; }
+        public string Mname { get; set; }
+        public string Lname { get; set; }
+        public string EmploymentStatus { get; set; }
+    }
+
+    class PayrollEmployeeDTO {
+        public string Fname { get; set; }
+        public string Lname { get; set; }
+        public decimal CurrentSalary { get; set; }
+    }
+
     public class Employee : IEntity {
 
         //public int Id { get; set; }
@@ -29,14 +43,17 @@ namespace PayrollAppSample.DDD.Domain.Core.Models {
         /// Navigation property
         /// </summary>
         public virtual Department Department { get; set; }
-        public virtual ICollection<PayrollHistory> PayrollHistories { get; set; }
+        public virtual List<PayrollHistory> PayrollHistories { get; set; }
         public virtual ICollection<Timekeeping> Timekeepings { get; set; }
         public EmployeeIncludedDeductions EmployeeIncludedDeductions { get; set; }
 
         #endregion
 
 
-
+        /// <summary>
+        /// anemic domain model
+        /// </summary>
+        /// <returns></returns>
         public decimal GetEmployeeYearlyNetIncome() {
             return this.Position.BaseSalary * 12;
         }

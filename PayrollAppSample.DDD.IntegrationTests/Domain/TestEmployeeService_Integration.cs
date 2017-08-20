@@ -48,6 +48,33 @@ namespace PayrollAppSample.DDD.IntegrationTests.Domain {
             service.RemoveEmployee(result.Id);
         }
 
+        [Test]
+        public void AddEmployee_Should_AddPosition() {
+            var dbContext = new PayrollContext();
+            var empRepo = new GenericRepository<Employee>(dbContext);
+            var uow = new UnitOfWork(dbContext);
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<EmployeeViewModel, Employee>());
+            var mapper = new Mapper(config);
+
+            var service = new HumanResourceService(empRepo, uow);
+
+            var result = service.AddEmployee(new Employee() {
+                Fname = "Sonny",
+                Mname = "Ramirez",
+                Lname = "Recio(Data)",
+                Position = new Position() {
+                    BaseSalary = 15000M,
+                    IncreasePercentage = 15,
+                    Name = "Jr. Programmer"
+                }
+            });
+
+            Assert.AreEqual("Recio", result.Lname);
+
+            //service.RemoveEmployee(result.Id);
+        }
+
+
 
     }
 }

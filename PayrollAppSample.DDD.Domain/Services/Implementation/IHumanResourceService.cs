@@ -12,7 +12,7 @@ namespace PayrollAppSample.DDD.Domain.Services.Implementation {
         void DeleteEmployee(int empId);
         void DeleteMultipleEmployees(int[] empIds);
         decimal GetNetPayWithTaxDeductionOnly(int empId);
-        decimal GetYearlyIncome();
+        decimal GetYearlyIncome(int empId);
         Employee InitializeEmployeeSalaryUsingPosition(int employeeId);
         Employee RemoveEmployee(int empId);
         IEnumerable<Employee> GetListOfEmployees();
